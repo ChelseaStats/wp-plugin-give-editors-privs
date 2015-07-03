@@ -1,9 +1,4 @@
 <?php
-/**
- * @package Editor extra privs
- * @author The Cellar Room Limited
- * @version 1.3.4
- */
 /*
 Plugin Name: Editor extra privs
 Version: 1.0.0
@@ -15,19 +10,35 @@ Copyright (c) 2015 by The Cellar Room Limited
 
 */
 
-function tcr_core_give_edit_theme_options( $caps ) {
-	
-	/* check if the user has the edit_pages capability */
-	if( ! empty( $caps[ 'edit_pages' ] ) ) {
-		
-		/* give the user the edit theme options capability */
-		$caps[ 'edit_theme_options' ] = true;
-		
-	}
-	
-	/* return the modified capabilities */
-	return $caps;
-	
-}
+defined( 'ABSPATH' ) or die();
 
-add_filter( 'user_has_cap', 'tcr_core_give_edit_theme_options' );
+/*************************************************************************/
+
+if ( ! class_exists( 'tcr_editor_extra_privs' ) ) :
+
+    class tcr_editor_extra_privs {
+    
+        function __construct() {
+            
+            add_filter( 'user_has_cap', array( $this, 'hesa_core_give_edit_theme_options' ));
+        }
+    
+        function hesa_core_give_edit_theme_options( $caps ) {
+        
+            /* check if the user has the edit_pages capability */
+            if( ! empty( $caps[ 'edit_pages' ] ) ) {
+        
+                /* give the user the edit theme options capability */
+                $caps[ 'edit_theme_options' ] = true;
+        
+            }
+        
+            /* return the modified capabilities */
+            return $caps;
+        
+        }
+    }
+    
+    new tcr_editor_extra_privs;
+
+endif;
