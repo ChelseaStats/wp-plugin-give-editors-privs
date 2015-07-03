@@ -14,9 +14,9 @@ defined( 'ABSPATH' ) or die();
 
 /*************************************************************************/
 
-if ( ! class_exists( 'hesa_editor_extra_privs' ) ) :
+if ( ! class_exists( 'tcr_editor_extra_privs' ) ) :
 
-    class hesa_editor_extra_privs {
+    class tcr_editor_extra_privs {
     
         function __construct() {
             
@@ -38,5 +38,7 @@ if ( ! class_exists( 'hesa_editor_extra_privs' ) ) :
         
         }
     }
+    
+    new tcr_editor_extra_privs;
 
 endif;
