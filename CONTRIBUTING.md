@@ -7,7 +7,7 @@ The following guidelines for contribution should be followed if you want to subm
 ### How to prepare
 
 * You need a [GitHub account](https://github.com/signup/free)
-* Submit an [issue ticket](https://github.com/ChelseaStats/wp-plugin-give-editors-privs/issues) for your issue if there is not one already.
+* Submit an [issue ticket](https://github.com/TCRWP/wp-plugin-give-editors-privs/issues) for your issue if there is not one already.
 	* Describe the issue and include steps to reproduce if it's a bug.
 	* Ensure to mention the earliest version that you know is affected.
 
